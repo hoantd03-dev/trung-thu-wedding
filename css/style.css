@@ -410,6 +410,43 @@ h3 {
   color: #C78665;
 }
 
+.navbar-toggler{
+	border: 1px solid #61D2B4;
+	border-radius: 0;
+	margin: 16px 15px;
+	padding: 10px 10px;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+.navbar-toggler span{
+	background: #61D2B4;
+	display: block;
+	width: 25px;
+	height: 2px;
+	margin: 0 auto;
+		margin-top: 0px;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	border-radius: 1px;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+.navbar-toggler span + span{
+	margin-top: 5px;
+}
+
+.navbar-toggler:hover{
+	border: 1px solid #881228;
+}
+
+.navbar-toggler:hover span{
+	background: #881228;
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 46, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_btn.scss */
   .boxed_btn3 {
