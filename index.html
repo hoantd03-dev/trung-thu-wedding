@@ -8,6 +8,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"> -->
     <!-- Place favicon.ico in the root directory -->
@@ -138,8 +141,9 @@
                 <div class="text_inner">
                     <img src="img/banner/ornaments.png" alt="">
                     <h4>05 Tháng 04 2026</h4>
-                    <h3>Đức Hoàn & Nguyễn Thu <br>
-                        Lễ Thành Hôn</h3>
+                    <h3 style="line-height: 1.4;
+                    letter-spacing: 1px;">Đức Hoàn & Nguyễn Thu <br>
+                        Lễ Cưới</h3>
                     <span>Get Married</span>
                 </div>
             </div>
@@ -160,8 +164,8 @@
                 <div class="col-xl-12">
                     <div class="section_title text-center">
                         <img src="img/banner/flowers.png" alt="">
-                        <span>14. January. 2020</span>
-                        <h3>THE. WEDDING. Countdown</h3>
+                        <span>05. Tháng 04. 2026</span>
+                        <h3>Đếm ngược ngày trọng đại</h3>
                     </div>
                 </div>
             </div>
@@ -590,9 +594,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/custom.js"></script>
     
     <script>
-        $('#clock').countdown('2020/01/07', function (event) {
+        $('#clock').countdown('2026/04/05 00:00:00', function (event) {
             $(this).html(event.strftime(
-                '<div class="countdown_wrap d-flex"><div  class="single_countdown"><h3>%D</h3><span>Days</span></div><div class="single_countdown"><h3>%H</h3><span>Hours</span></div><div class="single_countdown"><h3>%M</h3><span>Minutes</span></div><div class="single_countdown"><h3>%S</h3><span>Seconds</span></div></div>'
+                '<div class="countdown_wrap d-flex">' +
+                '<div class="single_countdown"><h3>%D</h3><span>Ngày</span></div>' +
+                '<div class="single_countdown"><h3>%H</h3><span>Giờ</span></div>' +
+                '<div class="single_countdown"><h3>%M</h3><span>Phút</span></div>' +
+                '<div class="single_countdown"><h3>%S</h3><span>Giây</span></div>' +
+                '</div>'
             ));
         });
     </script>

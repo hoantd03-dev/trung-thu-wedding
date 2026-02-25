@@ -102,19 +102,6 @@ h6 a {
   color: inherit;
 } */
 
-h3,
-h4,
-h5,
-h6 {
-    letter-spacing: 0;
-    font-weight: normal;
-    position: relative;
-    padding: 0 0 10px 0;
-    font-weight: normal;
-    line-height: 120% !important;
-    color: #1f1f1f;
-    margin: 0
-}
 
 /* line 57, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/theme-default.scss */
 ul {
@@ -1426,10 +1413,15 @@ h3 {
 /* line 113, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_slider.scss */
 .slider_area_inner .slider_text h3 {
   font-size: 36px;
-  font-family: "Petit Formal Script", cursive;
-  font-weight: 400;
+  font-family: 'Great Vibes', cursive;
+  /* font-style: italic; */
   color: #fff;
-  line-height: 46px;
+  /* line-height: 46px; */
+  line-height: 1.3;
+  text-rendering: auto;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin-bottom: 36px;
   margin-top: 23px;
 }
@@ -1605,7 +1597,7 @@ h3 {
   font-size: 60px;
   font-family: "Petit Formal Script", cursive;
   font-weight: 400;
-  color: #C78665;
+  color: #b8876f;
   margin-bottom: 17px;
 }
 
@@ -1618,7 +1610,7 @@ h3 {
 
 /* line 49, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_wedding_counter.scss */
 .weeding_countdown_area .countdown_area .countdown_wrap .single_countdown span {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   text-transform: uppercase;
 }
