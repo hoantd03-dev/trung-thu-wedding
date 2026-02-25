@@ -44,7 +44,7 @@
     <meta property="og:image:height" content="630">
 </head>
 
-<body>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
     <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
@@ -52,46 +52,65 @@
     <!-- header-->
     <header>
         <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3">
-                            <div class="logo-img">
-                                <a href="index.html">
-                                    <img src="img/logo.png" alt="">
-                                </a>
+                    <div id="sticky-header" class="main-header-area">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-xl-3 col-lg-3">
+                                    <div class="logo-img">
+                                        <a href="index.html">
+                                            <img src="img/logo.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-9 col-lg-9">
+                                    <div class="main-menu  d-none d-lg-block">
+                                        <nav>
+                                            <div id="navbar-wd">                                         
+                                                <ul id="navigation">
+                                                    <li><a class="active" href="index.html">home</a></li>
+                                                    <li><a href="story.html">Our Story</a></li>
+                                                    <li><a href="Gallery.html">Gallery</a></li>
+                                                    <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                                        <ul class="submenu">
+                                                            <li><a href="blog.html">blog</a></li>
+                                                            <li><a href="single-blog.html">single-blog</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                                        <ul class="submenu">
+                                                            <li><a href="Accommodation.html">Accommodation</a></li>
+                                                            <li><a href="elements.html">elements</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="contact.html">Contact</a></li>
+                                                </ul>
+                                            </div>       
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mobile_menu d-block d-lg-none"><div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_collapsed" style="outline: none;"><span class="slicknav_menutxt">MENU</span><span class="slicknav_icon"><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a><ul class="slicknav_nav slicknav_hidden" style="display: none;" aria-hidden="true" role="menu">
+                                                <li><a class="active" href="index.html" role="menuitem" tabindex="-1">home</a></li>
+                                                <li><a href="story.html" role="menuitem" tabindex="-1">Our Story</a></li>
+                                                <li><a href="Gallery.html" role="menuitem" tabindex="-1">Gallery</a></li>
+                                                <li class="slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row" style="outline: none;"><a href="#" tabindex="-1">blog <i class="ti-angle-down"></i></a>
+                                                    <span class="slicknav_arrow">+</span></a><ul class="submenu slicknav_hidden" role="menu" style="display: none;" aria-hidden="true">
+                                                        <li><a href="blog.html" role="menuitem" tabindex="-1">blog</a></li>
+                                                        <li><a href="single-blog.html" role="menuitem" tabindex="-1">single-blog</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="slicknav_collapsed slicknav_parent"><a href="#" role="menuitem" aria-haspopup="true" tabindex="-1" class="slicknav_item slicknav_row" style="outline: none;"><a href="#" tabindex="-1">pages <i class="ti-angle-down"></i></a>
+                                                    <span class="slicknav_arrow">+</span></a><ul class="submenu slicknav_hidden" role="menu" style="display: none;" aria-hidden="true">
+                                                        <li><a href="Accommodation.html" role="menuitem" tabindex="-1">Accommodation</a></li>
+                                                        <li><a href="elements.html" role="menuitem" tabindex="-1">elements</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="contact.html" role="menuitem" tabindex="-1">Contact</a></li>
+                                            </ul></div></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-xl-9 col-lg-9">
-                            <div class="main-menu  d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a class="active" href="index.html">home</a></li>
-                                        <li><a href="story.html">Our Story</a></li>
-                                        <li><a href="Gallery.html">Gallery</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="Accommodation.html">Accommodation</a></li>
-                                                <li><a href="elements.html">elements</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
     </header>
     <!--/ header-->
