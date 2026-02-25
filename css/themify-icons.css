@@ -407,9 +407,9 @@
 .ti-quote-left:before {
 	content: "\e67f";
 }
-.ti-pulse:before {
+/* .ti-pulse:before {
 	content: "\e680";
-}
+} */
 .ti-printer:before {
 	content: "\e681";
 }

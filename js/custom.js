@@ -111,6 +111,12 @@
 		}
 	});
 
+	console.log("custom loaded");
+
+	$(document).on("click", "a", function(){
+		console.log("clicked");
+	});
+
 	/* ..............................................
     Countdown Clock
     ................................................. */
