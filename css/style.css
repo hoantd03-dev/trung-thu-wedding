@@ -710,12 +710,17 @@ h3 {
 @media (max-width: 767px) {
   /* line 4, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_slick-nav.scss */
   .mobile_menu {
-    position: absolute;
-    right: 0px;
-    width: 100%;
-    z-index: 9;
+    position: relative;
+    width: auto;
+    right: auto;
   }
 }
+
+.mobile_menu {
+    margin-left: auto;
+}
+
+
 
 /* line 13, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_slick-nav.scss */
 .slicknav_menu .slicknav_nav {

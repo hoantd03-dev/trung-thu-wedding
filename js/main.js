@@ -24,6 +24,13 @@ if(menu.length){
 		openedSymbol:'-'
 	});
 };
+
+// 👇 THÊM ĐOẠN NÀY NGAY DƯỚI
+$(document).on('click', '.slicknav_nav a', function () {
+    if ($('.slicknav_btn').hasClass('slicknav_open')) {
+        $('.slicknav_btn').trigger('click');
+    }
+});
 // blog-menu
   // $('ul#blog-menu').slicknav({
   //   prependTo: ".blog_menu"

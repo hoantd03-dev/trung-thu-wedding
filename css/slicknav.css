@@ -141,9 +141,10 @@
   /*===== mobile menu slicknav =====*/
 
 .mobile_menu {
-	position: absolute;
-	right: 10px;
-	width: 96%;
+	position: relative;
+	/* right: 10px;  */
+  width: 100%;
+  right: auto;
 	z-index: 99;
 }
 .slicknav_menu .slicknav_menutxt {
