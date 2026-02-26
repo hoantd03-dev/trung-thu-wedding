@@ -31,6 +31,41 @@ $(document).on('click', '.slicknav_nav a', function () {
         $('.slicknav_btn').trigger('click');
     }
 });
+
+// Phát audio
+(function () {
+
+    var music = document.getElementById("bg-music");
+    var hasPlayed = false;
+
+    function playMusic() {
+      if (!hasPlayed) {
+          music.volume = 0;
+          music.play().then(function () {
+              hasPlayed = true;
+
+              var fade = setInterval(function () {
+                  if (music.volume < 0.9) {
+                      music.volume += 0.05;
+                  } else {
+                      clearInterval(fade);
+                  }
+              }, 200);
+          }).catch(function(){});
+      }
+    }
+
+    // 1️⃣ Thử phát ngay khi load
+    window.addEventListener("load", function () {
+        playMusic();
+    });
+
+    // 2️⃣ Nếu bị chặn → phát khi user tương tác
+    document.addEventListener("click", playMusic);
+    document.addEventListener("touchstart", playMusic);
+    document.addEventListener("scroll", playMusic);
+
+})();
 // blog-menu
   // $('ul#blog-menu').slicknav({
   //   prependTo: ".blog_menu"
