@@ -5,10 +5,31 @@
 	Loader 
     ................................................. */
 
-	$(window).on('load', function () {
-		$('.preloader').fadeOut();
-		$('#preloader').delay(550).fadeOut('slow');
-		$('body').delay(450).css({ 'overflow': 'visible' });
+	// $(window).on('load', function () {
+	// 	$('.preloader').fadeOut();
+	// 	$('#preloader').delay(550).fadeOut('slow');
+	// 	$('body').delay(450).css({ 'overflow': 'visible' });
+	// });
+
+	$(document).ready(function(){
+
+		$('#preloader').on('click', function(){
+
+			var music = document.getElementById("bg-music");
+			if (music) {
+				music.play().catch(function(){});
+			}
+
+			// Tắt animation pulse trước
+			$('.pulse').css('animation', 'none');
+
+			// Ẩn toàn bộ preloader
+			$('#preloader').fadeOut(600, function(){
+				$('body').css('overflow','visible');
+			});
+
+		});
+
 	});
 
 	/* ..............................................

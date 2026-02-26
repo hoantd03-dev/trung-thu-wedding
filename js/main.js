@@ -67,6 +67,24 @@ $(document).on('click', '.slicknav_nav a', function () {
     document.addEventListener("scroll", playMusic);
 
 })();
+  
+
+    $(document).ready(function(){
+
+        $('#preloader').on('click', function(){
+
+            var music = document.getElementById("bg-music");
+            if (music) {
+                music.play().catch(function(){});
+            }
+
+            $('#preloader').fadeOut(600, function(){
+                $('body').css('overflow','visible');
+            });
+
+        });
+
+    });
 // blog-menu
   // $('ul#blog-menu').slicknav({
   //   prependTo: ".blog_menu"
