@@ -902,6 +902,11 @@ h3 {
   text-align: right;
 }
 
+.title h2{
+	color: #ffffff;
+	padding: 10px 0px;
+}
+
 /* line 43, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li {
   display: inline-block;

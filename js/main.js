@@ -36,29 +36,30 @@ $(document).on('click', '.slicknav_nav a', function () {
 (function () {
 
     var music = document.getElementById("bg-music");
-    var hasPlayed = false;
+    var attempts = 0;
+    var maxAttempts = 5;
 
-    function playMusic() {
-      if (!hasPlayed) {
-          music.volume = 0;
-          music.play().then(function () {
-              hasPlayed = true;
+    function tryPlay() {
+        if (attempts >= maxAttempts) return;
 
-              var fade = setInterval(function () {
-                  if (music.volume < 0.9) {
-                      music.volume += 0.05;
-                  } else {
-                      clearInterval(fade);
-                  }
-              }, 200);
-          }).catch(function(){});
-      }
+        attempts++;
+
+        var promise = music.play();
+
+        if (promise !== undefined) {
+            promise.then(function () {
+                // Play thành công → dừng retry
+                attempts = maxAttempts;
+            }).catch(function () {
+                // Nếu bị chặn → thử lại sau 800ms
+                setTimeout(tryPlay, 800);
+            });
+        }
     }
 
-    // 1️⃣ Thử phát ngay khi load
-    window.addEventListener("load", function () {
-        playMusic();
-    });
+    window.addEventListener("load", tryPlay);
+
+
 
     // 2️⃣ Nếu bị chặn → phát khi user tương tác
     document.addEventListener("click", playMusic);
