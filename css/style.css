@@ -1403,7 +1403,7 @@ pointer-events:none;
 
 /* line 1, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/A3T05158.JPG);
+  background-image: url(../img/banner/A3T05160.JPG);
 }
 
 /* line 4, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_slider.scss */
@@ -1426,14 +1426,14 @@ pointer-events:none;
 
 /* line 14, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_slider.scss */
 .slider_area_inner {
-  height: 800px;
+  height: 1000px;
   position: relative;
   z-index: 8;
   position: relative;
   z-index: 8;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
+  background-position: center 45%;
 }
 
 @media (max-width: 767px) {
