@@ -33,58 +33,58 @@ $(document).on('click', '.slicknav_nav a', function () {
 });
 
 // Phát audio
-(function () {
+// (function () {
 
-    var music = document.getElementById("bg-music");
-    var attempts = 0;
-    var maxAttempts = 5;
+//     var music = document.getElementById("bg-music");
+//     var attempts = 0;
+//     var maxAttempts = 5;
 
-    function tryPlay() {
-        if (attempts >= maxAttempts) return;
+//     function tryPlay() {
+//         if (attempts >= maxAttempts) return;
 
-        attempts++;
+//         attempts++;
 
-        var promise = music.play();
+//         var promise = music.play();
 
-        if (promise !== undefined) {
-            promise.then(function () {
-                // Play thành công → dừng retry
-                attempts = maxAttempts;
-            }).catch(function () {
-                // Nếu bị chặn → thử lại sau 800ms
-                setTimeout(tryPlay, 800);
-            });
-        }
-    }
+//         if (promise !== undefined) {
+//             promise.then(function () {
+//                 // Play thành công → dừng retry
+//                 attempts = maxAttempts;
+//             }).catch(function () {
+//                 // Nếu bị chặn → thử lại sau 800ms
+//                 setTimeout(tryPlay, 800);
+//             });
+//         }
+//     }
 
-    window.addEventListener("load", tryPlay);
+//     window.addEventListener("load", tryPlay);
 
 
 
-    // 2️⃣ Nếu bị chặn → phát khi user tương tác
-    document.addEventListener("click", playMusic);
-    document.addEventListener("touchstart", playMusic);
-    document.addEventListener("scroll", playMusic);
+//     // 2️⃣ Nếu bị chặn → phát khi user tương tác
+//     document.addEventListener("click", playMusic);
+//     document.addEventListener("touchstart", playMusic);
+//     document.addEventListener("scroll", playMusic);
 
-})();
+// })();
   
 
-    $(document).ready(function(){
+//     $(document).ready(function(){
 
-        $('#preloader').on('click', function(){
+//         $('#preloader').on('click', function(){
 
-            var music = document.getElementById("bg-music");
-            if (music) {
-                music.play().catch(function(){});
-            }
+//             var music = document.getElementById("bg-music");
+//             if (music) {
+//                 music.play().catch(function(){});
+//             }
 
-            $('#preloader').fadeOut(600, function(){
-                $('body').css('overflow','visible');
-            });
+//             $('#preloader').fadeOut(600, function(){
+//                 $('body').css('overflow','visible');
+//             });
 
-        });
+//         });
 
-    });
+//     });
 // blog-menu
   // $('ul#blog-menu').slicknav({
   //   prependTo: ".blog_menu"

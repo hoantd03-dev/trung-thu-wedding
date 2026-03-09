@@ -958,113 +958,138 @@ h3 {
     display: none !important;
   }
 }
+#preloader{
+  background: url("../img/banner/sakura.webp"); 
+  background-position: center; 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-color:#f8f4f0; 
+  position: fixed; 
+  top:0; left:0; width:100vw; height:100vh; z-index:9999; 
+  /* overflow:hidden; */
+  display:flex; align-items:center; justify-content:center;
+  transition: opacity 4s ease;
+}
 
-#preloader {
-    width: 100%;
+/* overlay ánh sáng */
+#preloader::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0);
+    transition:background 1.2s ease;
+}
+
+/* trạng thái fade */
+#preloader.hide{
+    opacity:0;
+    transform:scale(1.08);
+    filter:blur(12px);
+}
+
+#preloader.hide::after{
+    background:rgba(255,255,255,0.35);
+}
+.invite-text{
+    color:#7a3c2e;
+    font-family:'Engagement', cursive;
+    font-size:28px;   /* giữ nguyên cho PC */
+    font-weight:500;
+    letter-spacing:1px;
+    margin:0;
+
+    white-space: nowrap;   /* ❗ không cho xuống dòng */
+
+    text-shadow:
+        0 2px 4px rgba(255,255,255,0.4);
+}
+/* mobile */
+@media (max-width:768px){
+    .invite-text{
+        font-size:24px;
+    }
+}
+html, body{
+    overflow: hidden;
     height: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: #881228;
-    z-index: 11000;
-    position: fixed;
-    display: block;
+}
+/* mặc định chưa có cửa */
+
+.sakura-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+
+z-index:1;
+pointer-events:none;
 }
 
-.pulse {
-	height: 280px;
-	width: 345px;
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-}
-.pulse:after {
-	content: '';
-	display: block;
-	background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300px 100px" enable-background="new 0 0 300px 100px" xml:space="preserve"><polyline fill="none" stroke-width="3px" stroke="white" points="2.4,58.7 70.8,58.7 76.1,46.2 81.1,58.7 89.9,58.7 93.8,66.5 102.8,22.7 110.6,78.7 115.3,58.7 126.4,58.7 134.4,54.7 142.4,58.7 197.8,58.7 "/></svg>') 0 0 no-repeat;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	-webkit-animation: 2s pulse linear infinite;
-	animation: 2s pulse linear infinite;
-    clip: rect(0, 0, 100px, 0);
-	background-position: 60px 0px;
-}
-.pulse:before {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	left: 2px;
-	right: 2px;
-	bottom: 0;
-	top: 16px;
-	margin: auto;
-	height: 3px;
+.sakura-bg{
+    transition:opacity 0.6s ease;
 }
 
-.pulse p{
-	color: #ffffff;
-	font-family: 'Engagement', cursive;
-	font-size: 38px;
+
+.split .bg-left{
+    animation:openLeft 1.2s ease forwards;
 }
 
-#enter-site {
-    margin-top: 25px;
-    padding: 12px 38px;
-
-    background: linear-gradient(145deg, #fffdf8, #f6e7d8);
-    color: #8b1e2d;
-
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
-    border: 1px solid #e8c9a0;
-    border-radius: 50px;
-
-    cursor: pointer;
-    transition: all 0.4s ease;
-
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+.split .bg-right{
+    animation:openRight 1.2s ease forwards;
 }
 
-#enter-site:hover {
-    background: linear-gradient(145deg, #fff8ef, #efd8c3);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+@keyframes openLeft{
+
+0%{
+    transform:translateX(0);
 }
 
-#enter-site:active {
-    transform: scale(0.96);
+100%{
+    transform:translateX(-100%);
 }
 
-#enter-site::after {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    border-radius: 50px;
-    background: linear-gradient(45deg, #f6e7d8, #e8c9a0, #f6e7d8);
-    z-index: -1;
-    opacity: 0;
-    transition: 0.4s;
 }
 
-#enter-site:hover::after {
-    opacity: 1;
+@keyframes openRight{
+
+0%{
+    transform:translateX(0);
 }
 
-#enter-site {
-    position: relative;
+100%{
+    transform:translateX(100%);
 }
 
-#preloader {
-    position: fixed;
+}
+
+.pulse{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    width:520px;
+    max-width:92vw;   /* mobile không tràn */
+
+    padding:30px 25px;  /* mobile gọn hơn */
+
+    background: rgba(255,255,255,0.28);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.2),
+        inset 0 0 20px rgba(255,255,255,0.2);
+
+    z-index:5;
 }
 
 
@@ -1139,6 +1164,68 @@ h3 {
 	color: #ffffff;
 	font-size: 38px;
 }
+
+/* nút mở thiệp */
+#enter-site{
+    margin-top: 25px;
+
+    padding: clamp(10px, 2vw, 14px) clamp(28px, 6vw, 42px);
+
+    background: linear-gradient(145deg, #fffdf8, #e74d05);
+    color: #8b1e2d;
+
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(13px, 2.8vw, 16px);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight:500;
+
+    border: 1px solid #e8c9a0;
+    border-radius: 50px;
+
+    cursor: pointer;
+    transition: all 0.35s ease;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+
+    position: relative;
+}
+
+/* hover */
+#enter-site:hover{
+    background: linear-gradient(145deg, #fff8ef, #efd8c3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+}
+
+/* click */
+#enter-site:active{
+    transform: scale(0.95);
+}
+
+/* viền ánh sáng */
+#enter-site::after{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:50px;
+
+    background: linear-gradient(45deg,#f6e7d8,#e8c9a0,#f6e7d8);
+
+    z-index:-1;
+    opacity:0;
+    transition:0.4s;
+}
+
+#enter-site:hover::after{
+    opacity:1;
+}
+
+#preloader {
+    position: fixed;
+}
+
+
 
 
 /* line 76, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */

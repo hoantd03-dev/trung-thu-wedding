@@ -10,27 +10,46 @@
 	// 	$('#preloader').delay(550).fadeOut('slow');
 	// 	$('body').delay(450).css({ 'overflow': 'visible' });
 	// });
+	function disableScroll(){
+    document.body.addEventListener("wheel", preventScroll, {passive:false});
+    document.body.addEventListener("touchmove", preventScroll, {passive:false});
+	}
+
+	function enableScroll(){
+		document.body.removeEventListener("wheel", preventScroll);
+		document.body.removeEventListener("touchmove", preventScroll);
+	}
+
+	function preventScroll(e){
+		e.preventDefault();
+	}
 
 	$(document).ready(function(){
 
-		$('#preloader').on('click', function(){
+		$('.open-invite').on('click', function(){
 
 			var music = document.getElementById("bg-music");
 			if (music) {
 				music.play().catch(function(){});
 			}
 
-			// Tắt animation pulse trước
-			$('.pulse').css('animation', 'none');
+			$('.pulse').fadeOut(400);
 
-			// Ẩn toàn bộ preloader
-			$('#preloader').fadeOut(600, function(){
+			$('#preloader').addClass('hide');
+
+			setTimeout(function(){
+
+				$('#preloader').remove();
+
+				// chỉ mở scroll cho body
 				$('body').css('overflow','visible');
-			});
+
+			},1000);
 
 		});
 
 	});
+
 
 	/* ..............................................
     Navbar Bar
