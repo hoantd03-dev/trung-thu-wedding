@@ -32,21 +32,36 @@
 
     var video = document.querySelector(".sakura-bg");
 
+    function forcePlay(){
+        if(video){
+            video.muted = true;
+            video.setAttribute("muted","");
+            video.play().catch(function(){});
+        }
+    }
+
+    // chạy khi load
+    forcePlay();
+
+    // chạy lại sau 500ms
+    setTimeout(forcePlay,500);
+
+    // chạy khi trang fully loaded
+    window.addEventListener("load",forcePlay);
+
     if(video){
         video.muted = true;
 
         var promise = video.play();
-
-        if(promise !== undefined){
-            promise.catch(function(){
-                // nếu autoplay bị chặn thì play khi user chạm màn hình
-                document.addEventListener("touchstart", function(){
-                    video.play();
-                }, {once:true});
-            });
         }
     }
 
+	
+
+	);
+	document.querySelector('.sakura-bg').addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
 	});
 	video.addEventListener("loadeddata", function () {
 		button.classList.add("show");
