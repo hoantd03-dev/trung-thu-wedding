@@ -33,6 +33,13 @@
 	});
 
 	$(document).ready(function(){
+			// ép video chạy (fix cho Zalo / WebView)
+		var video = document.querySelector(".sakura-bg");
+		if(video){
+			video.muted = true;
+			video.play().catch(function(){});
+		}
+
 
 		$('.open-invite').on('click', function(){
 
