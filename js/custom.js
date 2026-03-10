@@ -59,10 +59,7 @@
 	
 
 	);
-	document.querySelector('.sakura-bg').addEventListener('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-	});
+
 	video.addEventListener("loadeddata", function () {
 		button.classList.add("show");
 	});
