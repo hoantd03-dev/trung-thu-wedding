@@ -10,10 +10,83 @@
 	// 	$('#preloader').delay(550).fadeOut('slow');
 	// 	$('body').delay(450).css({ 'overflow': 'visible' });
 	// });
+	function debugLog(data){
+
+	fetch("/api/log",{
+		method:"POST",
+		headers:{
+		"Content-Type":"application/json"
+		},
+		body:JSON.stringify({
+		time:Date.now(),
+		...data
+		})
+	}).catch(()=>{});
+
+	}
+
+	debugLog({
+  		event:"page_load",
+  		userAgent:navigator.userAgent
+	});
 	function disableScroll(){
     document.body.addEventListener("wheel", preventScroll, {passive:false});
     document.body.addEventListener("touchmove", preventScroll, {passive:false});
 	}
+
+	const video = document.querySelector(".sakura-bg");
+
+	if(video){
+
+	debugLog({
+		event:"video_found"
+	});
+
+	video.addEventListener("loadstart",()=>{
+		debugLog({event:"loadstart"});
+	});
+
+	video.addEventListener("loadedmetadata",()=>{
+		debugLog({event:"loadedmetadata"});
+	});
+
+	video.addEventListener("loadeddata",()=>{
+		debugLog({event:"loadeddata"});
+	});
+
+	video.addEventListener("canplay",()=>{
+		debugLog({event:"canplay"});
+	});
+
+	video.addEventListener("playing",()=>{
+		debugLog({event:"playing"});
+	});
+
+	}
+
+	video.play().then(()=>{
+
+  debugLog({
+			event:"play_success"
+		});
+
+		}).catch(e=>{
+
+		debugLog({
+			event:"play_failed",
+			error:e.name,
+			message:e.message
+		});
+
+		});
+
+		debugLog({
+  event:"video_state",
+  muted:video.muted,
+  autoplay:video.autoplay,
+  readyState:video.readyState
+});
+
 
 	function enableScroll(){
 		document.body.removeEventListener("wheel", preventScroll);
@@ -24,7 +97,7 @@
 		e.preventDefault();
 	}
 
-	const video = document.querySelector(".sakura-bg");
+	// const video = document.querySelector(".sakura-bg");
 	const button = document.getElementById("enter-site");
 
 	// khi video load được frame đầu
