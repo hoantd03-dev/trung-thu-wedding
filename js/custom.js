@@ -24,6 +24,14 @@
 		e.preventDefault();
 	}
 
+	const video = document.querySelector(".sakura-bg");
+	const button = document.getElementById("enter-site");
+
+	// khi video load được frame đầu
+	video.addEventListener("playing", function () {
+		button.classList.add("show");
+	});
+
 	$(document).ready(function(){
 
 		$('.open-invite').on('click', function(){
@@ -40,10 +48,14 @@
 			setTimeout(function(){
 
 				$('#preloader').remove();
+				
 
 				// chỉ mở scroll cho body
-				$('body').css('overflow','visible');
-
+				$('html, body').css({
+				'overflow': 'auto',
+				'height': 'auto'
+			});
+				
 			},1000);
 
 		});
