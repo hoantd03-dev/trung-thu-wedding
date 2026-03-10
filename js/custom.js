@@ -28,37 +28,40 @@
 	const button = document.getElementById("enter-site");
 
 	// khi video load được frame đầu
-	$(document).ready(function(){
+$(document).ready(function(){
 
-    var video = document.querySelector(".sakura-bg");
+    var video = document.getElementById("sakuraVideo");
 
     function forcePlay(){
-        if(video){
-            video.muted = true;
-            video.setAttribute("muted","");
-            video.play().catch(function(){});
+        if(!video) return;
+
+        video.muted = true;
+        video.setAttribute("muted","");
+
+        // trick kích hoạt decode
+        try { video.currentTime = 0.01; } catch(e){}
+
+        var p = video.play();
+        if(p !== undefined){
+            p.catch(function(){});
         }
     }
 
-    // chạy khi load
+    // khi DOM ready
     forcePlay();
 
-    // chạy lại sau 500ms
-    setTimeout(forcePlay,500);
+    // khi page load
+    window.addEventListener("load", forcePlay);
 
-    // chạy khi trang fully loaded
-    window.addEventListener("load",forcePlay);
+    // delay chút (nhiều webview cần)
+    setTimeout(forcePlay, 300);
+    setTimeout(forcePlay, 800);
 
-    if(video){
-        video.muted = true;
+    // khi user chạm lần đầu
+    document.addEventListener("touchstart", forcePlay, {once:true});
+    document.addEventListener("click", forcePlay, {once:true});
 
-        var promise = video.play();
-        }
-    }
-
-	
-
-	);
+});	
 
 	video.addEventListener("loadeddata", function () {
 		button.classList.add("show");
