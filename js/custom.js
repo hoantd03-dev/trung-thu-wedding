@@ -28,7 +28,7 @@
 	const button = document.getElementById("enter-site");
 
 	// khi video load được frame đầu
-	video.addEventListener("playing", function () {
+	video.addEventListener("loadeddata", function () {
 		button.classList.add("show");
 	});
 
