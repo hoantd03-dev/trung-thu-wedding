@@ -28,17 +28,31 @@
 	const button = document.getElementById("enter-site");
 
 	// khi video load được frame đầu
+	$(document).ready(function(){
+
+    var video = document.querySelector(".sakura-bg");
+
+    if(video){
+        video.muted = true;
+
+        var promise = video.play();
+
+        if(promise !== undefined){
+            promise.catch(function(){
+                // nếu autoplay bị chặn thì play khi user chạm màn hình
+                document.addEventListener("touchstart", function(){
+                    video.play();
+                }, {once:true});
+            });
+        }
+    }
+
+	});
 	video.addEventListener("loadeddata", function () {
 		button.classList.add("show");
 	});
 
 	$(document).ready(function(){
-			// ép video chạy (fix cho Zalo / WebView)
-		var video = document.querySelector(".sakura-bg");
-		if(video){
-			video.muted = true;
-			video.play().catch(function(){});
-		}
 
 
 		$('.open-invite').on('click', function(){
