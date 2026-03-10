@@ -101,9 +101,9 @@
 	const button = document.getElementById("enter-site");
 
 	// khi video load được frame đầu
-	video.addEventListener("loadeddata", function () {
-		button.classList.add("show");
-	});
+	// video.addEventListener("loadeddata", function () {
+	// 	button.classList.add("show");
+	// });
 
 	$(document).ready(function(){
 
