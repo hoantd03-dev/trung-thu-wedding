@@ -28,41 +28,6 @@
 	const button = document.getElementById("enter-site");
 
 	// khi video load được frame đầu
-$(document).ready(function(){
-
-    var video = document.getElementById("sakuraVideo");
-
-    function forcePlay(){
-        if(!video) return;
-
-        video.muted = true;
-        video.setAttribute("muted","");
-
-        // trick kích hoạt decode
-        try { video.currentTime = 0.01; } catch(e){}
-
-        var p = video.play();
-        if(p !== undefined){
-            p.catch(function(){});
-        }
-    }
-
-    // khi DOM ready
-    forcePlay();
-
-    // khi page load
-    window.addEventListener("load", forcePlay);
-
-    // delay chút (nhiều webview cần)
-    setTimeout(forcePlay, 300);
-    setTimeout(forcePlay, 800);
-
-    // khi user chạm lần đầu
-    document.addEventListener("touchstart", forcePlay, {once:true});
-    document.addEventListener("click", forcePlay, {once:true});
-
-});	
-
 	video.addEventListener("loadeddata", function () {
 		button.classList.add("show");
 	});
