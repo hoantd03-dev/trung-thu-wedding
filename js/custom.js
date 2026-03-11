@@ -34,60 +34,6 @@
     document.body.addEventListener("touchmove", preventScroll, {passive:false});
 	}
 
-	const video = document.querySelector(".sakura-bg");
-
-	if(video){
-
-	debugLog({
-		event:"video_found"
-	});
-
-	video.addEventListener("loadstart",()=>{
-		debugLog({event:"loadstart"});
-	});
-
-	video.addEventListener("loadedmetadata",()=>{
-		debugLog({event:"loadedmetadata"});
-	});
-
-	video.addEventListener("loadeddata",()=>{
-		debugLog({event:"loadeddata"});
-	});
-
-	video.addEventListener("canplay",()=>{
-		debugLog({event:"canplay"});
-	});
-
-	video.addEventListener("playing",()=>{
-		debugLog({event:"playing"});
-	});
-
-	}
-
-	video.play().then(()=>{
-
-  debugLog({
-			event:"play_success"
-		});
-
-		}).catch(e=>{
-
-		debugLog({
-			event:"play_failed",
-			error:e.name,
-			message:e.message
-		});
-
-		});
-
-		debugLog({
-  event:"video_state",
-  muted:video.muted,
-  autoplay:video.autoplay,
-  readyState:video.readyState
-});
-
-
 	function enableScroll(){
 		document.body.removeEventListener("wheel", preventScroll);
 		document.body.removeEventListener("touchmove", preventScroll);
@@ -98,7 +44,7 @@
 	}
 
 	// const video = document.querySelector(".sakura-bg");
-	const button = document.getElementById("enter-site");
+
 
 	// khi video load được frame đầu
 	// video.addEventListener("loadeddata", function () {
@@ -111,9 +57,7 @@
 		$('.open-invite').on('click', function(){
 
 			var music = document.getElementById("bg-music");
-			if (music) {
-				music.play().catch(function(){});
-			}
+			if (music) music.play().catch(()=>{});
 
 			$('.pulse').fadeOut(400);
 
