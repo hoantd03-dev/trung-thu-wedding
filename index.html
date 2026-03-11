@@ -58,9 +58,11 @@
 
     <!-- LOADER -->
     <div id="preloader">
+        <link rel="preload" as="image" href="/img/banner/sakura.webp">
 
         
-        <img class="sakura-bg" src="/img/banner/sakura.webp" alt="">
+        <img class="sakura-bg" src="/img/banner/sakura.webp" decoding="async"
+            fetchpriority="high" alt="">
 
 
 		<div class="pulse">
