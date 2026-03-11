@@ -1025,44 +1025,12 @@ object-fit:cover;
 
 z-index:1;
 pointer-events:none;
+
+transition:opacity 0.6s ease;
+
+transform:translate3d(0,0,0);
 }
 
-.sakura-bg{
-    transition:opacity 0.6s ease;
-}
-
-
-.split .bg-left{
-    animation:openLeft 1.2s ease forwards;
-}
-
-.split .bg-right{
-    animation:openRight 1.2s ease forwards;
-}
-
-@keyframes openLeft{
-
-0%{
-    transform:translateX(0);
-}
-
-100%{
-    transform:translateX(-100%);
-}
-
-}
-
-@keyframes openRight{
-
-0%{
-    transform:translateX(0);
-}
-
-100%{
-    transform:translateX(100%);
-}
-
-}
 
 .pulse{
     position:absolute;
