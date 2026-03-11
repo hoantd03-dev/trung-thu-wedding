@@ -10,38 +10,9 @@
 	// 	$('#preloader').delay(550).fadeOut('slow');
 	// 	$('body').delay(450).css({ 'overflow': 'visible' });
 	// });
-	function debugLog(data){
 
-	fetch("/api/log",{
-		method:"POST",
-		headers:{
-		"Content-Type":"application/json"
-		},
-		body:JSON.stringify({
-		time:Date.now(),
-		...data
-		})
-	}).catch(()=>{});
 
-	}
 
-	debugLog({
-  		event:"page_load",
-  		userAgent:navigator.userAgent
-	});
-	function disableScroll(){
-    document.body.addEventListener("wheel", preventScroll, {passive:false});
-    document.body.addEventListener("touchmove", preventScroll, {passive:false});
-	}
-
-	function enableScroll(){
-		document.body.removeEventListener("wheel", preventScroll);
-		document.body.removeEventListener("touchmove", preventScroll);
-	}
-
-	function preventScroll(e){
-		e.preventDefault();
-	}
 
 	// const video = document.querySelector(".sakura-bg");
 
@@ -79,6 +50,15 @@
 		});
 
 	});
+
+	lottie.loadAnimation({
+	container: document.getElementById("lottie-bg"),
+	renderer: "canvas",
+	loop: true,
+	autoplay: true,
+	path: "/img/banner/sakura.json"
+	});
+
 
 
 	/* ..............................................

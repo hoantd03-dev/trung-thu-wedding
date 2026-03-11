@@ -850,10 +850,41 @@ h3 {
   background: #fff;
 }
 
+#lottie-bg{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;            /* nằm sau nội dung */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* áp dụng cho cả svg và canvas */
+#lottie-bg svg,
+#lottie-bg canvas{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+/* mobile scale thêm để tránh bị hụt chiều cao */
+@media (max-width: 768px){
+  #lottie-bg svg,
+  #lottie-bg canvas{
+    width:200%;
+    height:auto;
+  }
+}
+
 /* line 9, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
 .header-area .main-header-area {
   padding: 0 50px;
 }
+
 
 @media (max-width: 767px) {
   /* line 9, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
