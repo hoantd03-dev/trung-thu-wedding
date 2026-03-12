@@ -885,35 +885,35 @@ h3 {
 
 /* line 9, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
 .header-area .main-header-area {
-  padding: 0 50px;
+  /* padding: 0 50px; */
 }
 
 
 @media (max-width: 767px) {
   /* line 9, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
   .header-area .main-header-area {
-    padding: 10px 0;
+    /* padding: 10px 0; */
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 9, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
   .header-area .main-header-area {
-    padding: 10px 0;
+    /* padding: 10px 0; */
   }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 9, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
   .header-area .main-header-area {
-    padding: 0 50px;
+    /* padding: 0 50px; */
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1500px) {
   /* line 9, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
   .header-area .main-header-area {
-    padding: 0 50px;
+    /* padding: 0 50px; */
   }
 }
 
@@ -1368,7 +1368,7 @@ backface-visibility:hidden;
 @media (max-width: 767px) {
   /* line 144, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
   .header-area .main-header-area.sticky {
-    padding: 10px 0;
+    /* padding: 10px 0; */
   }
 
 }
@@ -1376,7 +1376,7 @@ backface-visibility:hidden;
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 144, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
   .header-area .main-header-area.sticky {
-    padding: 10px 0;
+    /* padding: 10px 0; */
   }
 }
 
