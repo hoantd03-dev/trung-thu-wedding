@@ -852,16 +852,14 @@ h3 {
 #lottie-bg{
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index:98;
   pointer-events: none;
 }
 
 #lottie-bg svg,
 #lottie-bg canvas{
-  top:80%;
-
   width:100%;
   height:200vh;
 }
