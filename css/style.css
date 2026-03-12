@@ -183,6 +183,11 @@ label {
   opacity: 1;
 }
 
+.timeLine .row .item h2{
+  font-family: 'Allura', cursive;
+  letter-spacing: 0.5px;
+}
+
 /* line 115, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/theme-default.scss */
 h3 {
   font-size: 24px;
