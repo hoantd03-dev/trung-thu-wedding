@@ -183,7 +183,12 @@ $('.testmonial_active').owlCarousel({
 	});
   
   // // wow js
-  // new WOW().init();
+// new WOW().init();
+
+// $('.timeLine .row .item').each(function(i){
+//   $(this).attr('data-wow-delay', (i * 0.15) + 's');
+//   $(this).attr('data-wow-duration','0.8s');
+// });
 
   // counter 
   $('.counter').counterUp({
