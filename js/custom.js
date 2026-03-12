@@ -53,10 +53,13 @@
 
 	lottie.loadAnimation({
 	container: document.getElementById("lottie-bg"),
-	renderer: "canvas",
+	renderer: "svg",
 	loop: true,
 	autoplay: true,
-	path: "/img/banner/sakura.json"
+	path: "/img/banner/sakura.json",
+	rendererSettings: {
+    	preserveAspectRatio: "xMidYMid slice"
+  	}
 	});
 
 

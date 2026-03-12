@@ -849,26 +849,21 @@ h3 {
   z-index: 999;
   background: #fff;
 }
-
 #lottie-bg{
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1;            /* nằm sau nội dung */
+  z-index:98;
   pointer-events: none;
-  overflow: hidden;
 }
 
-/* áp dụng cho cả svg và canvas */
 #lottie-bg svg,
 #lottie-bg canvas{
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
+  top:80%;
+
+  width:100%;
+  height:200vh;
 }
 
 /* mobile scale thêm để tránh bị hụt chiều cao */
@@ -1367,6 +1362,7 @@ backface-visibility:hidden;
   .header-area .main-header-area.sticky {
     padding: 10px 0;
   }
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1384,12 +1380,18 @@ backface-visibility:hidden;
 /* line 174, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
 .header-area .main-header-area.sticky .main-menu ul li a {
   padding: 35px 18px 35px 18px;
+  z-index: 9999 !important; 
 }
+
+  .header-area .main-header-area.sticky.navbar.container a {
+    z-index: 9999;
+  }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 174, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
   .header-area .main-header-area.sticky .main-menu ul li a {
     padding: 35px 8px 35px 8px;
+    
   }
 }
 
