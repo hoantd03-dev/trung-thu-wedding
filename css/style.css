@@ -5814,12 +5814,10 @@ h6 {
     border-radius:12px;
     box-shadow:0 15px 35px rgba(0,0,0,0.25);
     font-size:18px;
-    /* opacity:0; */
     transform:translateY(-20px);
     transition:all .5s ease;
     z-index:9999;
     font-weight:500;
-    font-family: 'Playfair Display', cursive;
 }
 
 .toast-success.show{
@@ -5839,12 +5837,12 @@ h6 {
     border-radius:12px;
     box-shadow:0 15px 35px rgba(0,0,0,0.25);
     font-size:18px;
-    opacity:0;
+    /* opacity:0; */
     transform:translateY(-20px);
     transition:all .5s ease;
     z-index:9999;
     font-weight:500;
-    font-family: 'Playfair Display', cursive;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .toast-success.show{
