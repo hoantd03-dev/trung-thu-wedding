@@ -207,5 +207,13 @@
 	makeTimer();
 
 // Lời chúc
+const ua = navigator.userAgent;
 
+if(/Android\s([0-9]+)/.test(ua)){
+  const version = parseInt(RegExp.$1);
+
+  if(version <= 10){
+    document.body.classList.add("old-android");
+  }
+}
 }(jQuery));
