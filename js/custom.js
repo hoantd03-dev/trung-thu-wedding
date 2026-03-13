@@ -206,6 +206,6 @@
 	setInterval(makeTimer, 1000);
 	makeTimer();
 
-
+// Lời chúc
 
 }(jQuery));

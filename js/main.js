@@ -25,14 +25,6 @@ if(menu.length){
 	});
 };
 
-const v = document.querySelector(".sakura-bg");
-
-v.muted = true;
-v.load();
-
-setTimeout(()=>{
-    v.play().catch(()=>{});
-},300);
 
 // 👇 THÊM ĐOẠN NÀY NGAY DƯỚI
 $(document).on('click', '.slicknav_nav a', function () {
