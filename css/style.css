@@ -5822,7 +5822,7 @@ h6 {
     transition:all .5s ease;
     z-index:9999;
     font-weight:500;
-    font-family: 'Allura', cursive;
+    font-family: 'Dancing Script', cursive;
 }
 
 .toast-success.show{
