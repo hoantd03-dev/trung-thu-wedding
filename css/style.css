@@ -993,7 +993,7 @@ h3 {
   }
 }
 #preloader{
-  background: url("../img/banner/sakura.webp"); 
+  background: url("../img/banner/sakura_1.webp"); 
   background-position: center; 
   background-size: cover; 
   background-repeat: no-repeat; 
@@ -1443,13 +1443,13 @@ backface-visibility:hidden;
 
 /* line 1, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/A3T05160.jpg);
+  background-image: url(../img/banner/A3T05160.webp);
 }
 
 /* line 4, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_slider.scss */
-.slider_bg_2 {
+/* .slider_bg_2 {
   background-image: url(../img/banner/A3T05158.JPG);
-}
+} */
 
 /* line 7, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_slider.scss */
 .slider_area {

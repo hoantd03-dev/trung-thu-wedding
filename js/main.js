@@ -183,31 +183,31 @@ $('.testmonial_active').owlCarousel({
 // });
 
   // counter 
-  $('.counter').counterUp({
-    delay: 10,
-    time: 10000
-  });
+//   $('.counter').counterUp({
+//     delay: 10,
+//     time: 10000
+//   });
 
-/* magnificPopup img view */
-$('.popup-image').magnificPopup({
-	type: 'image',
-	gallery: {
-	  enabled: true
-	}
-});
+// /* magnificPopup img view */
+// $('.popup-image').magnificPopup({
+// 	type: 'image',
+// 	gallery: {
+// 	  enabled: true
+// 	}
+// });
 
-/* magnificPopup img view */
-$('.img-pop-up').magnificPopup({
-	type: 'image',
-	gallery: {
-	  enabled: true
-	}
-});
+// /* magnificPopup img view */
+// $('.img-pop-up').magnificPopup({
+// 	type: 'image',
+// 	gallery: {
+// 	  enabled: true
+// 	}
+// });
 
-/* magnificPopup video view */
-$('.popup-video').magnificPopup({
-	type: 'iframe'
-});
+// /* magnificPopup video view */
+// $('.popup-video').magnificPopup({
+// 	type: 'iframe'
+// });
 
 
   // scrollIt for smoth scroll
@@ -334,27 +334,27 @@ dots:false,
 
 });
 //------- Mailchimp js --------//  
-function mailChimp() {
-  $('#mc_embed_signup').find('form').ajaxChimp();
-}
-mailChimp();
+// function mailChimp() {
+//   $('#mc_embed_signup').find('form').ajaxChimp();
+// }
+// mailChimp();
 
 
 
         // Search Toggle
-        $("#search_input_box").hide();
-        $("#search").on("click", function () {
-            $("#search_input_box").slideToggle();
-            $("#search_input").focus();
-        });
-        $("#close_search").on("click", function () {
-            $('#search_input_box').slideUp(500);
-        });
-        // Search Toggle
-        $("#search_input_box").hide();
-        $("#search_1").on("click", function () {
-            $("#search_input_box").slideToggle();
-            $("#search_input").focus();
-        });
+        // $("#search_input_box").hide();
+        // $("#search").on("click", function () {
+        //     $("#search_input_box").slideToggle();
+        //     $("#search_input").focus();
+        // });
+        // $("#close_search").on("click", function () {
+        //     $('#search_input_box').slideUp(500);
+        // });
+        // // Search Toggle
+        // $("#search_input_box").hide();
+        // $("#search_1").on("click", function () {
+        //     $("#search_input_box").slideToggle();
+        //     $("#search_input").focus();
+        // });
 
-})(jQuery);	
+})(jQuery);

@@ -155,7 +155,7 @@ wishList.addEventListener("wheel", function(e){
   const isAtTop = this.scrollTop <= 0;
   const isAtBottom = this.scrollTop + this.clientHeight >= this.scrollHeight - 1;
 
-  // 👉 Nếu đang ở giữa → giữ scroll trong box
+  // 👉 đang scroll trong box
   if(
     (isScrollingDown && !isAtBottom) ||
     (isScrollingUp && !isAtTop)
@@ -164,10 +164,12 @@ wishList.addEventListener("wheel", function(e){
     return;
   }
 
-  // 👉 Nếu chạm biên → đẩy scroll ra page NGAY LẬP TỨC
+  // 👉 chạm biên → chuyển ra ngoài NGAY
+  e.preventDefault(); // 🔥 QUAN TRỌNG
+
   window.scrollBy({
     top: e.deltaY,
     behavior: "auto"
   });
 
-}, { passive: true });
+}, { passive: false }); // 🔥 bắt buộc

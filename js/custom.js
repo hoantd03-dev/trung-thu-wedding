@@ -21,6 +21,10 @@
 	// video.addEventListener("loadeddata", function () {
 	// 	button.classList.add("show");
 	// });
+	window.addEventListener("load", () => {
+	const img = document.querySelector(".sakura-bg");
+	img.src = img.dataset.src;
+	});
 
 	$(document).ready(function(){
 
@@ -128,25 +132,25 @@
     Gallery
     ................................................. */
 
-	$(document).ready(function () {
-		$('.popup-gallery').magnificPopup({
-			delegate: 'a',
-			type: 'image',
-			tLoading: 'Loading image #%curr%...',
-			mainClass: 'mfp-img-mobile',
-			gallery: {
-				enabled: true,
-				navigateByImgClick: true,
-				preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-			},
-			image: {
-				tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-				titleSrc: function (item) {
-					return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
-				}
-			}
-		});
-	});
+	// $(document).ready(function () {
+	// 	$('.popup-gallery').magnificPopup({
+	// 		delegate: 'a',
+	// 		type: 'image',
+	// 		tLoading: 'Loading image #%curr%...',
+	// 		mainClass: 'mfp-img-mobile',
+	// 		gallery: {
+	// 			enabled: true,
+	// 			navigateByImgClick: true,
+	// 			preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+	// 		},
+	// 		image: {
+	// 			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+	// 			titleSrc: function (item) {
+	// 				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+	// 			}
+	// 		}
+	// 	});
+	// });
 
 	/* ..............................................
     Smooth Scroll
@@ -217,3 +221,29 @@ if(/Android\s([0-9]+)/.test(ua)){
   }
 }
 }(jQuery));
+
+const menuLinks = document.querySelectorAll('#navbar-wd a');
+const sections = document.querySelectorAll('[data-section]');
+
+function setActiveMenu() {
+  let scrollY = window.scrollY;
+
+  sections.forEach(section => {
+    const top = section.offsetTop - 120; // offset header
+    const height = section.offsetHeight;
+    const id = section.getAttribute('data-section');
+
+    if (scrollY >= top && scrollY < top + height) {
+      menuLinks.forEach(link => {
+        link.classList.remove('active');
+
+        if (link.getAttribute('href') === `#${id}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}
+
+// chạy khi scroll
+window.addEventListener('scroll', setActiveMenu);

@@ -49,7 +49,7 @@
     <meta property="og:image:height" content="630">
 </head>
 
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+<body id="home" data-section="home"  data-target="#navbar-wd" data-offset="98">
     <div id="lottie-bg"></div>
     <audio id="bg-music"
        src="music/wedding.mp3"
@@ -61,11 +61,13 @@
 
     <!-- LOADER -->
     <div id="preloader">
-        <link rel="preload" as="image" href="/img/banner/sakura.webp">
 
         
-        <img class="sakura-bg" src="/img/banner/sakura.webp" decoding="async"
-            fetchpriority="high" alt="">
+        <img 
+            class="sakura-bg" 
+            data-src="/img/banner/sakura.webp"
+            alt=""
+        >
 
 
 		<div class="pulse">
@@ -189,7 +191,7 @@
 
     <!-- our_love-story -->
      
-	<div id="story" class="love_story_area">
+	<div id="story" data-section="story" class="love_story_area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -306,7 +308,7 @@
     <!--/ our_love-story -->
 
     <!-- gallery_area  -->
-    <div id="gallery" class="gallery_area">
+    <div id="gallery" data-section="gallery" class="gallery_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -389,7 +391,7 @@
     <!--/ gallery_area  -->
 
     <!-- program_details -->
-    <div id="program" class="program_details_area">
+    <div id="program" data-section="program" class="program_details_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -445,7 +447,7 @@
     <!--/ program_details -->
 
     <!-- attend_area -->
-    <div id="attending_area" class="attending_area">
+    <div id="attending_area" data-section="attending_area" class="attending_area">
         
         <div class="container">
             <div class="row mb-5">
@@ -631,10 +633,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/smoothscroll.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <!-- <script src="js/smoothscroll.js"></script> -->
+    <!-- <script src="js/owl.carousel.min.js"></script> -->
     <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/ajax-form.js"></script>
+    <!-- <script src="js/ajax-form.js"></script> -->
     <!-- <script src="js/waypoints.min.js"></script> -->
     <script src="js/jquery.counterup.min.js"></script>
     <!-- <script src="js/storyloaded.pkgd.min.js"></script> -->
@@ -648,8 +650,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/jquery.countdown.min.js"></script>
     <script src="js/jquery.slicknav.min.js"></script>
     <!-- <script src="js/jquery.magnific-popup.min.js"></script> -->
-    <script src="js/plugins.js"></script>
-    <script src="js/timeLine.min.js"></script>	
+    <script src="js/plugins.js" defer></script>
+    <script src="js/timeLine.min.js" defer></script>	
 
     <!--contact js-->
     <!-- <script src="js/contact.js"></script> -->
@@ -659,7 +661,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- <script src="js/mail-script.js"></script> -->
     
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <script src="js/custom.js" defer></script>
     <script type="module" src="js/firebase.js"></script>
     
