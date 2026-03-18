@@ -849,11 +849,12 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_header.scss */
 .header-area {
+  position: relative;
   left: 0;
   right: 0;
   top: 0;
   background: transparent;
-  z-index: 999;
+  z-index: 99;
   background: #fff;
 }
 #lottie-bg{
