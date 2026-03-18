@@ -7,6 +7,7 @@
     <title>Hoàn & Thu Wedding</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-control" content="public">
 
     <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
@@ -87,7 +88,7 @@
             
                 <div id="sticky-header" class="main-header-area">
                     <nav class="navbar navbar-expand-lg header-nav">
-                        <div class="container">
+                        <div class="container" >
                             
 
                             <!-- Logo -->
@@ -122,22 +123,14 @@
                                     <li>
                                         <a class="nav-link" href="#gallery">Ảnh Cưới</a>
                                     </li>
-
-                                    <!-- Dropdown Blog -->
                                     <li>
-                                        <a class="nav-link dropdown-toggle" href="#">
-                                        Lịch Trình Đám Cưới
+                                        <a class="nav-link" href="#program">
+                                        Lịch Trình Đám Cưới</a>
                                     </li>
-
-                                    <!-- Dropdown Pages -->
                                     <li>
-                                        <a class="nav-link dropdown-toggle" href="#">
+                                        <a class="nav-link" href="#attending_area">
                                         Gửi lời chúc mừng 
                                         </a>
-                                    </li>
-
-                                    <li>
-                                        <a class="nav-link" href="contact.html"></a>
                                     </li>
 
                                 </ul>
@@ -313,7 +306,7 @@
     <!--/ our_love-story -->
 
     <!-- gallery_area  -->
-    <div class="gallery_area">
+    <div id="gallery" class="gallery_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -396,7 +389,7 @@
     <!--/ gallery_area  -->
 
     <!-- program_details -->
-    <div class="program_details_area">
+    <div id="program" class="program_details_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -452,7 +445,7 @@
     <!--/ program_details -->
 
     <!-- attend_area -->
-    <div class="attending_area">
+    <div id="attending_area" class="attending_area">
         
         <div class="container">
             <div class="row mb-5">
@@ -667,7 +660,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     
 
     <script src="js/main.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="js/custom.js" defer></script>
     <script type="module" src="js/firebase.js"></script>
     
 <script>
