@@ -214,19 +214,19 @@ h3 {
 }
 
 /* line 137, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/theme-default.scss */
-.bg-img-1 {
+/* .bg-img-1 {
   background-image: url(../img/slider/slider-img-1.jpg);
-}
+} */
 
 /* line 140, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/theme-default.scss */
-.bg-img-2 {
+/* .bg-img-2 {
   background-image: url(../img/background-img/bg-img-2.jpg);
-}
+} */
 
 /* line 143, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/theme-default.scss */
-.cta-bg-1 {
+/* .cta-bg-1 {
   background-image: url(../img/background-img/bg-img-3.jpg);
-}
+} */
 
 /* line 148, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/theme-default.scss */
 .overlay {
@@ -2262,47 +2262,50 @@ backface-visibility:hidden;
 
 /* line 37, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_gallery.scss */
 .gallery_imag_1 {
-  background-image: url(../img/gallery/1.png);
+  background-image: url(../img/anh_cuoi/2.webp);
 }
 
 /* line 40, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_gallery.scss */
 .gallery_imag_2 {
-  background-image: url(../img/gallery/2.png);
+  background-image: url(../img/anh_cuoi/3.webp);
 }
 
 /* line 43, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_gallery.scss */
 .gallery_imag_3 {
-  background-image: url(../img/gallery/3.png);
+  background-image: url(../img/anh_cuoi/5.webp);
 }
 
 /* line 46, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_gallery.scss */
 .gallery_imag_4 {
-  background-image: url(../img/gallery/4.png);
+  background-image: url(../img/anh_cuoi/4.webp);
 }
 
 /* line 49, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_gallery.scss */
 .gallery_imag_5 {
-  background-image: url(../img/gallery/5.png);
+  background-image: url(../img/anh_cuoi/6.webp);
 }
 
 /* line 52, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_gallery.scss */
 .gallery_imag_6 {
-  background-image: url(../img/gallery/6.png);
+  background-image: url(../img/anh_cuoi/7.webp);
+  height: 550px;
 }
 
 /* line 55, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_gallery.scss */
 .gallery_imag_7 {
-  background-image: url(../img/gallery/7.png);
+  background-image: url(../img/anh_cuoi/8.webp);
+  height: 550px;
 }
 
 /* line 58, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_gallery.scss */
 .gallery_imag_8 {
-  background-image: url(../img/gallery/8.png);
+  background-image: url(../img/anh_cuoi/9.webp);
+  height: 550px;
 }
 
 /* line 61, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_gallery.scss */
 .gallery_imag_9 {
-  background-image: url(../img/gallery/9.png);
+  background-image: url(../img/anh_cuoi/10.webp);
 }
 
 /* line 65, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_gallery.scss */
