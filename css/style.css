@@ -863,7 +863,7 @@ h3 {
     width:100%;
     height:100%;
     pointer-events:none;
-  z-index:98;
+  z-index:97;
   pointer-events: none;
 }
 
@@ -1881,6 +1881,8 @@ backface-visibility:hidden;
   padding-top: 95px;
   padding-bottom: 280px;
 }
+
+
 
 /* line 4, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_attending.scss */
 .attending_area.plus_padding {
@@ -5960,6 +5962,7 @@ h6 {
 .gift_box img{
     width:180px;
     margin:12px 0;
+    position: relative;
 }
 
 .gift_box h4{
