@@ -62,7 +62,9 @@ function initFirebase(form, wishList){
 
   // 👇 realtime data
   onSnapshot(q,(snapshot)=>{
-
+    //  console.log("snapshot fired, justSubmitted:", justSubmitted); // 👈
+    // const title = document.getElementById("title_wish");
+    // const scrollTarget = title.getBoundingClientRect().top + window.scrollY;
     wishList.innerHTML="";
 
     snapshot.forEach(doc=>{
@@ -84,18 +86,15 @@ function initFirebase(form, wishList){
 
     // 👇 scroll đúng timing
     if(justSubmitted){
-
-      const firstWish = wishList.querySelector(".wish-item");
-
-      if(firstWish){
-        firstWish.scrollIntoView({
-          behavior:"smooth",
-          block:"nearest"
-        });
-      }
-
       justSubmitted = false;
+      wishList.scrollTo({ top: 0, behavior: "instant" });
 
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const giftBox = document.getElementById("gift-box-row");
+        giftBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
     }
 
   });
@@ -139,6 +138,7 @@ function showToast(){
 
   toast.classList.add("show");
 
+
   setTimeout(()=>{
     toast.classList.remove("show");
   },5000);
@@ -173,3 +173,4 @@ wishList.addEventListener("wheel", function(e){
   });
 
 }, { passive: false }); // 🔥 bắt buộc
+

@@ -247,3 +247,28 @@ function setActiveMenu() {
 
 // chạy khi scroll
 window.addEventListener('scroll', setActiveMenu);
+
+ let _stk = '';
+  function openLightbox(img) {
+    _stk = img.dataset.stk;
+    document.getElementById('lb-img').src = img.dataset.fullsrc;
+    document.getElementById('lb-name').textContent = img.dataset.name;
+    document.getElementById('lb-copy').textContent = 'Sao chép số tài khoản';
+    document.getElementById('lb-copy').classList.remove('copied');
+    document.getElementById('lb').classList.add('active');
+	const toast = document.getElementById('toast-success');
+    if (toast) toast.style.pointerEvents = 'none';
+  }
+  function closeLightbox(e) {
+    if (e && e.target.id !== 'lb') return;
+    document.getElementById('lb').classList.remove('active');
+  }
+  function copySTK() {
+    navigator.clipboard.writeText(_stk).then(() => {
+      const b = document.getElementById('lb-copy');
+      b.textContent = '✓ Đã sao chép!';
+      b.classList.add('copied');
+      setTimeout(() => { b.textContent = 'Sao chép số tài khoản'; b.classList.remove('copied'); }, 2000);
+    });
+  }
+  document.addEventListener('keydown', e => { if (e.key==='Escape') document.getElementById('lb').classList.remove('active'); });

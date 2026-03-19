@@ -6035,3 +6035,61 @@ h6 {
     margin: 0 !important;
     object-fit:contain;
 }
+
+
+.qr-img {
+  cursor: zoom-in;
+  transition: transform 0.2s;
+}
+.qr-img:hover { transform: scale(1.04); }
+
+.lightbox-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999; opacity: 0; pointer-events: none;
+  transition: opacity 0.25s, background 0.25s;
+}
+.lightbox-overlay.active {
+  opacity: 1; pointer-events: all;
+  background: rgba(0,0,0,0.75);
+}
+.lightbox-inner {
+  position: relative; display: flex;
+  flex-direction: column; align-items: center; gap: 14px;
+  transform: scale(0.88);
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.lightbox-overlay.active .lightbox-inner { transform: scale(1); }
+.lightbox-qr {
+    width: auto;        /* 👈 bỏ width cố định */
+    height: auto;       /* 👈 bỏ height cố định */
+    max-width: 320px;   /* giới hạn chiều ngang */
+    max-height: 80vh;   /* giới hạn chiều cao theo màn hình */
+   border-radius: 12px; 
+   background: #fff;   
+   object-fit: contain;
+  }
+.lightbox-name { color: #fff; font-size: 16px; font-weight: 500; }
+.lightbox-hint { color: rgba(255,255,255,0.55); font-size: 12px; }
+.copy-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff; padding: 8px 22px;
+  border-radius: 999px; font-size: 13px; cursor: pointer;
+}
+.copy-btn:hover { background: rgba(255,255,255,0.25); }
+.copy-btn.copied { background: rgba(100,220,120,0.25); }
+.lb-close {
+  position: absolute; top: -38px; right: 0;
+  background: none; border: none;
+  z-index: 10000;
+  color: rgba(255,255,255,0.7); font-size: 24px; cursor: pointer;
+}
+
+/* Map responsive */
+@media (max-width: 768px) {
+    .location_area iframe {
+        height: 280px; /* Mobile: 280px */
+    }
+}
