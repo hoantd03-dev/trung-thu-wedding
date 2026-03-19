@@ -2280,21 +2280,27 @@
 .timeLine .row .item:after {
 	content: '';
 	height: 1px;
-	width: 5%;
+	width: 11%;
 	position: absolute;
 	background-color: #890025;
 	top: 16px;
 	right: 8px; 
 }
 .timeLine .row .item .caption {
-	margin: auto;
-	width: 85%;
-	background: #F0F0F0;
-	min-height: 200px;
-	position: relative;
-	color: #333;
-	border: 1px solid #aaa;
-	box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.5); 
+    margin: auto;
+    width: 70%; /* PC */
+    background: #F0F0F0;
+    min-height: 200px;
+    position: relative;
+    color: #333;
+    border: 1px solid #aaa;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.5); 
+}
+
+@media (max-width: 768px) {
+    .timeLine .row .item .caption {
+        width: 85%; /* Mobile */
+    }
 }
 .timeLine .row .item .caption .star {
 	width: 50px;
@@ -2331,7 +2337,7 @@
 .timeLine .row .item .caption .image img {
 	width: 100%;
 	min-height: 200px;
-	max-height: 400px; 
+	max-height: 360px; 
 }
 .timeLine .row .item .caption .image video {
 	width: 100%;
@@ -2410,7 +2416,7 @@
 .timeLine .row .pull-right:after {
 	content: '';
 	height: 1px;
-	width: 5%;
+	width: 11%;
 	position: absolute;
 	background-color: #890025;
 	top: 21px;

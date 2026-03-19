@@ -96,16 +96,16 @@ $(document).on('click', '.slicknav_nav a', function () {
 
 // for filter
   // init Isotope
-  var $grid = $('.grid').isotope({
-    itemSelector: '.grid-item',
-    // percentPosition: true,
-    gutter: 10,
-    masonry: {
-      // use outer width of grid-sizer for columnWidth
-      columnWidth: 1,
-      // gutter: 30
-    }
-  });
+  // var $grid = $('.grid').isotope({
+  //   itemSelector: '.grid-item',
+  //   // percentPosition: true,
+  //   gutter: 10,
+  //   masonry: {
+  //     // use outer width of grid-sizer for columnWidth
+  //     columnWidth: 1,
+  //     // gutter: 30
+  //   }
+  // });
 
   // filter items on button click
   $('.portfolio-menu').on('click', 'button', function () {
