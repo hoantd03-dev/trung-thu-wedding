@@ -6064,8 +6064,8 @@ h6 {
 .lightbox-qr {
     width: auto;        /* 👈 bỏ width cố định */
     height: auto;       /* 👈 bỏ height cố định */
-    max-width: 320px;   /* giới hạn chiều ngang */
-    max-height: 80vh;   /* giới hạn chiều cao theo màn hình */
+    max-width: min(320px, 85vw);  /* 👈 không vượt quá 85% chiều ngang màn hình */
+  max-height: 75vh;       /* giới hạn chiều cao theo màn hình */
    border-radius: 12px; 
    background: #fff;   
    object-fit: contain;
