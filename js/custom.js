@@ -215,47 +215,47 @@
 // Lời chúc
 const ua = navigator.userAgent;
 
-if(/Android\s([0-9]+)/.test(ua)){
-  const version = parseInt(RegExp.$1);
+// if(/Android\s([0-9]+)/.test(ua)){
+//   const version = parseInt(RegExp.$1);
 
-  if(version <= 10){
-    document.body.classList.add("old-android");
-  }
-}
+//   if(version <= 10){
+//     document.body.classList.add("old-android");
+//   }
+// }
 
-document.fonts.ready.then(() => {
-    const elements = {
-        h4: document.querySelector('.slider_area_inner h4'),
-        h3: document.querySelector('.slider_area_inner h3'),
-        span: document.querySelector('.slider_area_inner span'),
-    };
+// document.fonts.ready.then(() => {
+//     const elements = {
+//         h4: document.querySelector('.slider_area_inner h4'),
+//         h3: document.querySelector('.slider_area_inner h3'),
+//         span: document.querySelector('.slider_area_inner span'),
+//     };
 
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
+//     const canvas = document.createElement('canvas');
+//     const ctx = canvas.getContext('2d');
 
-    const results = {};
-    for (const [name, el] of Object.entries(elements)) {
-        if (!el) continue;
-        const computed = window.getComputedStyle(el);
-        ctx.font = computed.font;
-        results[name] = {
-            fontFamily: computed.fontFamily,
-            fontWeight: computed.fontWeight,
-            fontSize: computed.fontSize,
-            width: ctx.measureText('Đức Hoàn & Nguyễn Thu').width
-        };
-    }
+//     const results = {};
+//     for (const [name, el] of Object.entries(elements)) {
+//         if (!el) continue;
+//         const computed = window.getComputedStyle(el);
+//         ctx.font = computed.font;
+//         results[name] = {
+//             fontFamily: computed.fontFamily,
+//             fontWeight: computed.fontWeight,
+//             fontSize: computed.fontSize,
+//             width: ctx.measureText('Đức Hoàn & Nguyễn Thu').width
+//         };
+//     }
 
-    fetch('/api/log', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            type: 'slider-font',
-            ua: navigator.userAgent,
-            ...results
-        })
-    }).catch(() => {});
-});
+//     fetch('/api/log', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({
+//             type: 'slider-font',
+//             ua: navigator.userAgent,
+//             ...results
+//         })
+//     }).catch(() => {});
+// });
 // const deviceInfo = {
 //   userAgent: ua,
 //   platform: navigator.platform || 'unknown',
