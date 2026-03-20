@@ -1642,7 +1642,7 @@ backface-visibility:hidden;
 @media (max-width: 767px) {
   /* line 113, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_slider.scss */
   .slider_area_inner .slider_text h3 {
-    font-size: 23px;
+    font-size: 23px !important;
     font-weight: 400;
     color: #fff;
     line-height: 30px;
@@ -1650,13 +1650,13 @@ backface-visibility:hidden;
     margin-top: 15px;
   }
    .slider_area_inner .slider_text h4 {
-    font-size: 16px;
+    font-size: 16px !important;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
   }
 
   .slider_area_inner .slider_text span {
-    font-size: 14px;
+    font-size: 14px !important;
     font-family: "Muli", sans-serif;
     font-weight: 400;
     color: #fff;
