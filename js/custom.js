@@ -21,7 +21,7 @@
 	// video.addEventListener("loadeddata", function () {
 	// 	button.classList.add("show");
 	// });
-	window.addEventListener("load", () => {
+	window.addEventListener("DOMContentLoaded", () => {
 		const img = document.querySelector(".sakura-bg");
 		if (img && img.dataset.src) {
 			img.src = img.dataset.src;
