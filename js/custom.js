@@ -327,19 +327,33 @@ window.addEventListener('scroll', setActiveMenu);
   
 
   // Fix font size bị scale trên Android Facebook WebView
-if (/FB_IAB|FBAV/i.test(navigator.userAgent) && /Android/i.test(navigator.userAgent)) {
-    document.addEventListener('DOMContentLoaded', function() {
-        const fixes = [
-            { selector: '.slider_area_inner h4', size: '16px' },
-            { selector: '.slider_area_inner h3', size: '23px' },
-            { selector: '.slider_area_inner span', size: '14px' },
-        ];
+// Thêm vào custom.js
+// Fix font size bị scale trên Android Facebook WebView
+(function() {
+    function fixFBScale() {
+        if (!/FB_IAB|FBAV/i.test(navigator.userAgent)) return;
+        if (!/Android/i.test(navigator.userAgent)) return;
 
-        fixes.forEach(({ selector, size }) => {
-            const el = document.querySelector(selector);
-            if (el) {
-                el.style.setProperty('font-size', size, 'important');
-            }
+        document.fonts.ready.then(() => {
+            const targets = [
+                { selector: '.slider_area_inner h4', target: 16 },
+                { selector: '.slider_area_inner h3', target: 23 },
+                { selector: '.slider_area_inner span', target: 14 },
+            ];
+
+            targets.forEach(({ selector, target }) => {
+                const el = document.querySelector(selector);
+                if (!el) return;
+                const actual = parseFloat(window.getComputedStyle(el).fontSize);
+                if (actual <= target) return;
+                const scale = target / actual;
+                el.style.transform = `scale(${scale})`;
+                el.style.transformOrigin = 'center center';
+                el.style.display = 'block';
+            });
         });
-    });
-}
+    }
+
+    document.addEventListener('DOMContentLoaded', fixFBScale);
+    window.addEventListener('load', fixFBScale);
+})();
