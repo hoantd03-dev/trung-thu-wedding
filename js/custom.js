@@ -363,7 +363,7 @@ window.addEventListener('scroll', setActiveMenu);
 					el.style.marginBottom = '0px';
 					el.style.marginTop = '13px'; // giữ nguyên margin-top gốc của h3
 				} else if (selector.includes('span')) {
-					el.style.marginBottom = '2px';
+					el.style.marginBottom = '5px';
 					el.style.marginTop = '0px';
 				}
             });
