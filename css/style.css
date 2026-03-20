@@ -12,6 +12,22 @@
 @import url(timeline.css);
 /* @import url(flaticon.css); */
 
+/* Thêm vào đầu style.css */
+@font-face {
+    font-family: 'Muli';
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Engagement';
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-display: swap;
+}
+
 
 
 
