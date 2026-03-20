@@ -1,18 +1,24 @@
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: '1mb',
+    },
+  },
+};
+
 export default async function handler(req, res) {
 
-  if (req.method === "POST") {
-    const deviceInfo = {
-      ...req.body,
-      ip: req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown',
-      receivedAt: new Date().toISOString()
-    };
+  console.error("HIT /api/log", req.method);
 
-    console.log("VIDEO DEBUG:", req.body);
-    console.log("DEVICE LOG:", JSON.stringify(deviceInfo));
-    
+  if (req.method === "POST") {
+    console.error("DEVICE LOG:", JSON.stringify({
+      ...req.body,
+      ip: req.headers['x-forwarded-for'] || 'unknown',
+      receivedAt: new Date().toISOString()
+    }));
+
     return res.status(200).json({ ok: true });
   }
 
   res.status(405).json({ error: "Method not allowed" });
-
 }
