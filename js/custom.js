@@ -221,21 +221,21 @@ if(/Android\s([0-9]+)/.test(ua)){
   }
 }
 
-const deviceInfo = {
-  userAgent: ua,
-  platform: navigator.platform || 'unknown',
-  language: navigator.language || 'unknown',
-  screenWidth: window.screen.width,
-  screenHeight: window.screen.height,
-  timestamp: new Date().toISOString()
-};
+// const deviceInfo = {
+//   userAgent: ua,
+//   platform: navigator.platform || 'unknown',
+//   language: navigator.language || 'unknown',
+//   screenWidth: window.screen.width,
+//   screenHeight: window.screen.height,
+//   timestamp: new Date().toISOString()
+// };
 
-fetch('/api/log', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(deviceInfo)
-}).catch(() => {});
-}(jQuery));
+// fetch('/api/log', {
+//   method: 'POST',
+//   headers: { 'Content-Type': 'application/json' },
+//   body: JSON.stringify(deviceInfo)
+// }).catch(() => {});
+// }(jQuery));
 
 const menuLinks = document.querySelectorAll('#navbar-wd a');
 const sections = document.querySelectorAll('[data-section]');
