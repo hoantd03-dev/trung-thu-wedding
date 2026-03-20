@@ -1853,6 +1853,12 @@ backface-visibility:hidden;
   padding: 57px 30px;
 }
 
+@media (min-width: 992px){
+  .program_details_area .single_program .program_inner{
+    height: 399px;
+  }
+}
+
 /* line 22, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/_program.scss */
 .program_details_area .single_program .program_inner span {
   font-size: 20px;
