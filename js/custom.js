@@ -331,34 +331,46 @@ window.addEventListener('scroll', setActiveMenu);
 // Fix font size bị scale trên Android Facebook WebView
 (function() {
     function fixFBScale() {
-    const ua = navigator.userAgent;
-    
-    const isFBAndroid = /FB_IAB|FBAV/i.test(ua) && /Android/i.test(ua);
-    const isZaloAndroid = /Zalo/i.test(ua) && /Android/i.test(ua);
-    
-    if (!isFBAndroid && !isZaloAndroid) return;
+        const ua = navigator.userAgent;
+        
+        const isFBAndroid = /FB_IAB|FBAV/i.test(ua) && /Android/i.test(ua);
+        const isZaloAndroid = /Zalo/i.test(ua) && /Android/i.test(ua);
+        
+        if (!isFBAndroid && !isZaloAndroid) return;
 
-    document.fonts.ready.then(() => {
-        const targets = [
-            { selector: '.slider_area_inner h4', target: 16 },
-            { selector: '.slider_area_inner h3', target: 23 },
-            { selector: '.slider_area_inner span', target: 14 },
-        ];
+        document.fonts.ready.then(() => {
+            const targets = [
+                { selector: '.slider_area_inner h4', target: 16 },
+                { selector: '.slider_area_inner h3', target: 23 },
+                { selector: '.slider_area_inner span', target: 14 },
+            ];
 
-        targets.forEach(({ selector, target }) => {
-			const el = document.querySelector(selector);
-			if (!el) return;
-			const actual = parseFloat(window.getComputedStyle(el).fontSize);
-			if (actual <= target) return;
-			const scale = target / actual;
-			const diff = actual - target;
+            targets.forEach(({ selector, target }) => {
+                const el = document.querySelector(selector);
+                if (!el) return;
+                const actual = parseFloat(window.getComputedStyle(el).fontSize);
+                if (actual <= target) return;
+                const scale = target / actual;
+                const diff = actual - target;
 
-			el.style.transform = `scale(${scale})`;
-            el.style.transformOrigin = 'top center';
-            el.style.display = 'block';
-            el.style.marginBottom = `-${diff}px`;
-            el.style.marginTop = `-${diff / 2}px`;
-		});
-    });
-}
+                el.style.transform = `scale(${scale})`;
+                el.style.transformOrigin = 'top center';
+                el.style.display = 'block';
+                if (selector.includes('h4')) {
+					el.style.marginBottom = '0px';
+					el.style.marginTop = '0px';
+				} else if (selector.includes('h3')) {
+					el.style.marginBottom = '0px';
+					el.style.marginTop = '15px'; // giữ nguyên margin-top gốc của h3
+				} else if (selector.includes('span')) {
+					el.style.marginBottom = '0px';
+					el.style.marginTop = '0px';
+				}
+            });
+        });
+    }
+
+    // THIẾU 2 DÒNG NÀY
+    document.addEventListener('DOMContentLoaded', fixFBScale);
+    window.addEventListener('load', fixFBScale);
 })();
