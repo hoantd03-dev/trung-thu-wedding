@@ -223,24 +223,31 @@ if(/Android\s([0-9]+)/.test(ua)){
 
 document.fonts.ready.then(() => {
     const inviteText = document.querySelector('.invite-text');
-    
+
+    // Test fallback bằng cách so sánh width với font chuẩn
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    ctx.font = window.getComputedStyle(inviteText).font;
     
-    const metrics = ctx.measureText('Đức Hoàn & Nguyễn Thu');
+    ctx.font = '24px cursive';
+    const cursiveWidth = ctx.measureText('Đức Hoàn & Nguyễn Thu').width;
+    
+    ctx.font = '24px serif';
+    const serifWidth = ctx.measureText('Đức Hoàn & Nguyễn Thu').width;
+
+    ctx.font = '24px Engagement, cursive';
+    const engagementWidth = ctx.measureText('Đức Hoàn & Nguyễn Thu').width;
 
     fetch('/api/log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            type: 'font-render',
+            type: 'font-debug',
             ua: navigator.userAgent,
-            platform: navigator.platform,
-            computedFont: window.getComputedStyle(inviteText).font,
-            textWidth: metrics.width,
-            ascent: metrics.actualBoundingBoxAscent,
-            descent: metrics.actualBoundingBoxDescent,
+            engagementWidth,
+            cursiveWidth,
+            serifWidth,
+            // Nếu engagementWidth === cursiveWidth thì đang fallback
+            isEngagementFallback: engagementWidth === cursiveWidth
         })
     }).catch(() => {});
 });
