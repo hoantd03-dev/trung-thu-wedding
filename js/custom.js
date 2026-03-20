@@ -220,6 +220,21 @@ if(/Android\s([0-9]+)/.test(ua)){
     document.body.classList.add("old-android");
   }
 }
+
+const deviceInfo = {
+  userAgent: ua,
+  platform: navigator.platform || 'unknown',
+  language: navigator.language || 'unknown',
+  screenWidth: window.screen.width,
+  screenHeight: window.screen.height,
+  timestamp: new Date().toISOString()
+};
+
+fetch('/api/log-device', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(deviceInfo)
+}).catch(() => {});
 }(jQuery));
 
 const menuLinks = document.querySelectorAll('#navbar-wd a');
