@@ -5856,7 +5856,7 @@ h6 {
 
 .wish-item{
     width:100%;
-    font-family:'Allura',cursive;
+    font-family:'Allura','Dancing Script', cursive;
 
     background: linear-gradient(135deg,#fff0f6,#ffe4ec,#ffd6e7);
     border:1px solid rgba(255,150,190,0.3);
@@ -5879,7 +5879,7 @@ h6 {
 .wish-text{
     font-size:14px;
     color:#666;
-    font-family:'Allura','Dancing Script', cursive;
+    /* font-family:'Allura','Dancing Script', cursive; */
 
     white-space:pre-wrap;
     word-break:break-word;
