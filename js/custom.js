@@ -233,9 +233,14 @@ document.fonts.ready.then(() => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             type: 'font-check',
+            ua: navigator.userAgent,
             inviteText_font: computedInvite.fontFamily,
             button_font: computedButton.fontFamily,
-            fontsLoaded: [...document.fonts].map(f => `${f.family}:${f.status}`)
+            engagement_available: document.fonts.check('16px Engagement'),
+            playfair_available: document.fonts.check('16px "Playfair Display"'),
+            fontsLoaded: [...document.fonts]
+                .filter(f => f.status === 'loaded')
+                .map(f => f.family)
         })
     }).catch(() => {});
 });
