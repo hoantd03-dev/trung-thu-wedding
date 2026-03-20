@@ -235,7 +235,8 @@ if(/Android\s([0-9]+)/.test(ua)){
 //   headers: { 'Content-Type': 'application/json' },
 //   body: JSON.stringify(deviceInfo)
 // }).catch(() => {});
-// }(jQuery));
+// 
+}(jQuery));
 
 const menuLinks = document.querySelectorAll('#navbar-wd a');
 const sections = document.querySelectorAll('[data-section]');
