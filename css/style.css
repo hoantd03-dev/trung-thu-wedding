@@ -56,6 +56,8 @@ body {
   font-weight: normal;
   font-style: normal;
   overflow-x: hidden;
+  -webkit-text-size-adjust: none; /* none thay vì 100% */
+  text-size-adjust: none;
 }
 
 /* line 15, ../../Arafath/CL/CL september/212. Wedding/HTML/scss/theme-default.scss */
