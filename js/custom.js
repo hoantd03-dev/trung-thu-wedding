@@ -22,8 +22,10 @@
 	// 	button.classList.add("show");
 	// });
 	window.addEventListener("load", () => {
-	const img = document.querySelector(".sakura-bg");
-	img.src = img.dataset.src;
+		const img = document.querySelector(".sakura-bg");
+		if (img && img.dataset.src) {
+			img.src = img.dataset.src;
+		}
 	});
 
 	$(document).ready(function(){
