@@ -354,17 +354,18 @@ window.addEventListener('scroll', setActiveMenu);
 			const diff = actual - target;
 
 			el.style.transform = `scale(${scale})`;
-			el.style.transformOrigin = 'top center';
-			el.style.display = 'block';
-
-			// h3 cần margin riêng vì có margin-top trong CSS
-			if (selector.includes('h3')) {
-				el.style.marginBottom = `-${diff}px`;
-				el.style.marginTop = `${diff / 2}px`; // dương thay vì âm
-			} else {
-				el.style.marginBottom = `-${diff}px`;
-				el.style.marginTop = `-${diff / 2}px`;
-			}
+            el.style.transformOrigin = 'top center';
+            el.style.display = 'block';
+            if (selector.includes('h4')) {
+				el.style.marginBottom = '0px';
+				el.style.marginTop = '0px';
+			} else if (selector.includes('h3')) {
+				el.style.marginBottom = '0px';
+				el.style.marginTop = '15px'; // giữ nguyên margin-top gốc của h3
+			} else if (selector.includes('span')) {
+				el.style.marginBottom = '0px';
+				el.style.marginTop = '0px';
+    }
 		});
     });
 }
