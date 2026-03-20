@@ -223,24 +223,24 @@ if(/Android\s([0-9]+)/.test(ua)){
 
 document.fonts.ready.then(() => {
     const inviteText = document.querySelector('.invite-text');
-    const button = document.querySelector('.open-invite');
-
-    const computedInvite = window.getComputedStyle(inviteText);
-    const computedButton = window.getComputedStyle(button);
+    
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.font = window.getComputedStyle(inviteText).font;
+    
+    const metrics = ctx.measureText('Đức Hoàn & Nguyễn Thu');
 
     fetch('/api/log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            type: 'font-check',
+            type: 'font-render',
             ua: navigator.userAgent,
-            inviteText_font: computedInvite.fontFamily,
-            button_font: computedButton.fontFamily,
-            engagement_available: document.fonts.check('16px Engagement'),
-            playfair_available: document.fonts.check('16px "Playfair Display"'),
-            fontsLoaded: [...document.fonts]
-                .filter(f => f.status === 'loaded')
-                .map(f => f.family)
+            platform: navigator.platform,
+            computedFont: window.getComputedStyle(inviteText).font,
+            textWidth: metrics.width,
+            ascent: metrics.actualBoundingBoxAscent,
+            descent: metrics.actualBoundingBoxDescent,
         })
     }).catch(() => {});
 });
