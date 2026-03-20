@@ -325,3 +325,21 @@ window.addEventListener('scroll', setActiveMenu);
   document.addEventListener('keydown', e => { if (e.key==='Escape') document.getElementById('lb').classList.remove('active'); });
 
   
+
+  // Fix font size bị scale trên Android Facebook WebView
+if (/FB_IAB|FBAV/i.test(navigator.userAgent) && /Android/i.test(navigator.userAgent)) {
+    document.addEventListener('DOMContentLoaded', function() {
+        const fixes = [
+            { selector: '.slider_area_inner h4', size: '16px' },
+            { selector: '.slider_area_inner h3', size: '23px' },
+            { selector: '.slider_area_inner span', size: '14px' },
+        ];
+
+        fixes.forEach(({ selector, size }) => {
+            const el = document.querySelector(selector);
+            if (el) {
+                el.style.setProperty('font-size', size, 'important');
+            }
+        });
+    });
+}
