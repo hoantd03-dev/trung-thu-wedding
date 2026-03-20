@@ -222,33 +222,38 @@ if(/Android\s([0-9]+)/.test(ua)){
 }
 
 document.fonts.ready.then(() => {
+    const elements = {
+        h4: document.querySelector('.slider_area_inner h4'),
+        h3: document.querySelector('.slider_area_inner h3'),
+        span: document.querySelector('.slider_area_inner span'),
+    };
+
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    
-    ctx.font = '24px Engagement, "Snell Roundhand", "Dancing Script", cursive';
-    const testWidth = ctx.measureText('Đức Hoàn & Nguyễn Thu').width;
-    
-    ctx.font = '24px "Dancing Script"';
-    const dancingWidth = ctx.measureText('Đức Hoàn & Nguyễn Thu').width;
-    
-    ctx.font = '24px cursive';
-    const cursiveWidth = ctx.measureText('Đức Hoàn & Nguyễn Thu').width;
+
+    const results = {};
+    for (const [name, el] of Object.entries(elements)) {
+        if (!el) continue;
+        const computed = window.getComputedStyle(el);
+        ctx.font = computed.font;
+        results[name] = {
+            fontFamily: computed.fontFamily,
+            fontWeight: computed.fontWeight,
+            fontSize: computed.fontSize,
+            width: ctx.measureText('Đức Hoàn & Nguyễn Thu').width
+        };
+    }
 
     fetch('/api/log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            type: 'font-fallback',
+            type: 'slider-font',
             ua: navigator.userAgent,
-            testWidth,
-            dancingWidth,
-            cursiveWidth,
-            usingDancing: Math.abs(testWidth - dancingWidth) < 2,
-            usingCursive: Math.abs(testWidth - cursiveWidth) < 2,
+            ...results
         })
     }).catch(() => {});
 });
-
 // const deviceInfo = {
 //   userAgent: ua,
 //   platform: navigator.platform || 'unknown',
