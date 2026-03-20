@@ -222,20 +222,29 @@ if(/Android\s([0-9]+)/.test(ua)){
 }
 
 document.fonts.ready.then(() => {
-    const inviteText = document.querySelector('.invite-text');
-    const computed = window.getComputedStyle(inviteText);
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
     
+    ctx.font = '24px Engagement, "Snell Roundhand", "Dancing Script", cursive';
+    const testWidth = ctx.measureText('Đức Hoàn & Nguyễn Thu').width;
+    
+    ctx.font = '24px "Dancing Script"';
+    const dancingWidth = ctx.measureText('Đức Hoàn & Nguyễn Thu').width;
+    
+    ctx.font = '24px cursive';
+    const cursiveWidth = ctx.measureText('Đức Hoàn & Nguyễn Thu').width;
+
     fetch('/api/log', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            type: 'font-detail',
+            type: 'font-fallback',
             ua: navigator.userAgent,
-            fontFamily: computed.fontFamily,
-            fontWeight: computed.fontWeight,
-            fontSize: computed.fontSize,
-            fontStyle: computed.fontStyle,
-            fontVariant: computed.fontVariant,
+            testWidth,
+            dancingWidth,
+            cursiveWidth,
+            usingDancing: Math.abs(testWidth - dancingWidth) < 2,
+            usingCursive: Math.abs(testWidth - cursiveWidth) < 2,
         })
     }).catch(() => {});
 });
