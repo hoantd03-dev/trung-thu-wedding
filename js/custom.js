@@ -342,15 +342,19 @@ window.addEventListener('scroll', setActiveMenu);
             ];
 
             targets.forEach(({ selector, target }) => {
-                const el = document.querySelector(selector);
-                if (!el) return;
-                const actual = parseFloat(window.getComputedStyle(el).fontSize);
-                if (actual <= target) return;
-                const scale = target / actual;
-                el.style.transform = `scale(${scale})`;
-                el.style.transformOrigin = 'center center';
-                el.style.display = 'block';
-            });
+				const el = document.querySelector(selector);
+				if (!el) return;
+				const actual = parseFloat(window.getComputedStyle(el).fontSize);
+				if (actual <= target) return;
+				const scale = target / actual;
+				const diff = actual - target;
+				
+				el.style.transform = `scale(${scale})`;
+				el.style.transformOrigin = 'top center';
+				el.style.display = 'block';
+				el.style.marginBottom = `-${diff}px`;
+				el.style.marginTop = `-${diff / 2}px`;
+			});
         });
     }
 
