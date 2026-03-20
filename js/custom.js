@@ -221,6 +221,25 @@ if(/Android\s([0-9]+)/.test(ua)){
   }
 }
 
+document.fonts.ready.then(() => {
+    const inviteText = document.querySelector('.invite-text');
+    const button = document.querySelector('.open-invite');
+
+    const computedInvite = window.getComputedStyle(inviteText);
+    const computedButton = window.getComputedStyle(button);
+
+    fetch('/api/log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            type: 'font-check',
+            inviteText_font: computedInvite.fontFamily,
+            button_font: computedButton.fontFamily,
+            fontsLoaded: [...document.fonts].map(f => `${f.family}:${f.status}`)
+        })
+    }).catch(() => {});
+});
+
 // const deviceInfo = {
 //   userAgent: ua,
 //   platform: navigator.platform || 'unknown',
