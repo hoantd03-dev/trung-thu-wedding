@@ -6203,7 +6203,32 @@ h6 {
     /* z-index: 10000; */
 }
 #music-toggle:hover .lp-tooltip { opacity: 1; }
+#music-toggle svg {
+    width: 26px;
+    height: 26px;
+    display: block;
+}
 
+@media (max-width: 767px) {
+    #music-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+    #music-toggle svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    #music-player-wrap {
+        bottom: 16px;
+        right: 16px;
+    }
+
+    #song-ticker {
+        max-width: 140px;
+    }
+}
 #song-ticker {
     display: flex;
     align-items: center;
