@@ -374,3 +374,38 @@ window.addEventListener('scroll', setActiveMenu);
     document.addEventListener('DOMContentLoaded', fixFBScale);
     window.addEventListener('load', fixFBScale);
 })();
+
+
+
+
+(function () {
+    var music      = document.getElementById('bg-music');
+    var btn        = document.getElementById('music-toggle');
+    var ticker     = document.getElementById('song-ticker');
+    var tickTrack  = document.getElementById('song-ticker-track');
+    var tip        = document.getElementById('lp-tooltip');
+
+    function syncState() {
+        if (music.paused) {
+            btn.classList.add('paused');
+            ticker.classList.add('hidden');
+            if (tickTrack) tickTrack.style.animationPlayState = 'paused';
+            tip.textContent = 'Nhấn để phát nhạc';
+        } else {
+            btn.classList.remove('paused');
+            ticker.classList.remove('hidden');
+            if (tickTrack) tickTrack.style.animationPlayState = 'running';
+            tip.textContent = 'Nhấn để dừng nhạc';
+        }
+    }
+
+    btn.addEventListener('click', function () {
+        music.paused ? music.play() : music.pause();
+        syncState();
+    });
+
+    music.addEventListener('play',    syncState);
+    music.addEventListener('pause',   syncState);
+    music.addEventListener('canplay', syncState);
+    syncState();
+})();

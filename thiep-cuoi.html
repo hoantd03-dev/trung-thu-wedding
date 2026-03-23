@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thiệp Báo Hỷ - Đức Hoàn & Nguyễn Thu</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8edf2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .card {
+    width: 780px;
+    max-width: 100%;
+    background: #fff;
+    border: 2px solid #a8c4d4;
+    display: flex;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    position: relative;
+    animation: fadeIn 1s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Viền ngoài */
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px solid #a8c4d4;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* LEFT PANEL */
+  .left {
+    width: 45%;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #a8c4d4;
+    position: relative;
+  }
+
+  .bao-hy {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #2c5f7a;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .monogram {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .monogram-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: #2c5f7a;
+    line-height: 1;
+  }
+
+  .monogram-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #2c5f7a;
+    line-height: 1.6;
+  }
+
+  .monogram-date .heart {
+    color: #e74c3c;
+    font-size: 14px;
+    margin: 2px 0;
+  }
+
+  .tiệc-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+    color: #2c5f7a;
+    margin: 16px 0 24px;
+    text-align: center;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #a8c4d4, transparent);
+    margin: 16px 0;
+  }
+
+  .info-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    border: 1px solid #a8c4d4;
+    margin: 8px 0;
+  }
+
+  .info-cell {
+    flex: 1;
+    padding: 12px 8px;
+    text-align: center;
+  }
+
+  .info-cell:first-child {
+    border-right: 1px solid #a8c4d4;
+  }
+
+  .info-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #2c5f7a;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .info-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a3d52;
+  }
+
+  .info-value.small {
+    font-size: 16px;
+  }
+
+  .am-lich {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: #7a9aaa;
+    margin: 6px 0 16px;
+    text-align: center;
+  }
+
+  .address-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #2c5f7a;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .address-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a3d52;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+
+  .address-detail {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: #5a7a8a;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .quote {
+    font-family: 'Great Vibes', cursive;
+    font-size: 18px;
+    color: #2c5f7a;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  /* RIGHT PANEL */
+  .right {
+    width: 55%;
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .tran-trong {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #2c5f7a;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .dotted-line {
+    width: 100%;
+    border-top: 1px dotted #a8c4d4;
+    margin: 12px 0;
+  }
+
+  .invite-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #4a7a8a;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 8px;
+  }
+
+  .groom-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 52px;
+    color: #2c5f7a;
+    text-align: center;
+    line-height: 1.2;
+    margin: 8px 0;
+  }
+
+  .bride-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 52px;
+    color: #2c5f7a;
+    text-align: center;
+    line-height: 1.2;
+    margin: 8px 0 20px;
+  }
+
+  /* Hoa trang trí */
+  .flower-decoration {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 80px;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  /* Gia đình */
+  .family-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #d0e4ee;
+  }
+
+  .family-col {
+    width: 48%;
+    text-align: center;
+  }
+
+  .family-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #2c5f7a;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .family-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    color: #1a3d52;
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+  }
+
+  .family-member {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: #7a9aaa;
+    margin-top: 4px;
+  }
+
+  .hoa-svg {
+    width: 120px;
+    opacity: 0.7;
+    margin: 10px auto;
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    .card {
+      flex-direction: column;
+    }
+    .left, .right {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #a8c4d4;
+    }
+    .groom-name, .bride-name {
+      font-size: 40px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- LEFT -->
+  <div class="left">
+    <p class="bao-hy">Báo Hỷ</p>
+
+    <div class="monogram">
+      <span class="monogram-letter">H</span>
+      <div class="monogram-date">
+        <span>24</span>
+        <span class="heart">♥</span>
+        <span>04</span>
+        <span>·</span>
+        <span>26</span>
+      </div>
+      <span class="monogram-letter">T</span>
+    </div>
+
+    <p class="tiệc-title">Tiệc Báo Hỷ</p>
+
+    <div class="divider"></div>
+
+    <div class="info-box">
+      <div class="info-cell">
+        <p class="info-label">Vào lúc</p>
+        <p class="info-value">16:00</p>
+      </div>
+      <div class="info-cell">
+        <p class="info-label">Thứ 6</p>
+        <p class="info-value small">24.04.2026</p>
+      </div>
+    </div>
+
+    <p class="am-lich">Tức ngày 08 tháng 03 năm Bính Ngọ</p>
+
+    <div class="divider"></div>
+
+    <p class="address-title">Tại</p>
+    <p class="address-name">Tư Gia Nhà Gái</p>
+    <p class="address-detail">Thôn 5, Xã Bình An, Tỉnh Tuyên Quang</p>
+
+    <div class="divider"></div>
+
+    <p class="quote">Sự hiện diện của Quý khách<br>là niềm vinh hạnh cho gia đình chúng tôi!</p>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <p class="tran-trong">Trân Trọng Kính Mời</p>
+    <div class="dotted-line"></div>
+
+    <p class="invite-text">
+      TỚI DỰ BỮA TIỆC THÂN MẬT CÙNG GIA ĐÌNH CHÚNG TÔI
+    </p>
+
+    <!-- Hoa trang trí SVG -->
+    <img class="hoa-svg" src="1.png" >
+    
+    <p class="groom-name">Đức Hoàn</p>
+    <p class="bride-name">Nguyễn Thu</p>
+
+    <div class="dotted-line"></div>
+
+    <div class="family-section">
+      <div class="family-col">
+        <p class="family-label">Nhà Trai</p>
+        <p class="family-name">TRẦN VĂN KHẢI<br>NGUYỄN THỊ TÁM</p>
+        <p class="family-member">Chú rể: Trần Đức Hoàn</p>
+      </div>
+      <div class="family-col">
+        <p class="family-label">Nhà Gái</p>
+        <p class="family-name">NGUYỄN ĐÌNH NHÍCH<br>TRẦN THỊ DINH</p>
+        <p class="family-member">Cô dâu: Nguyễn Thị Thu</p>
+      </div>
+    </div>
+
+    <p class="quote" style="margin-top: 16px; font-size: 16px;">Rất hân hạnh được đón tiếp!</p>
+  </div>
+
+</div>
+
+</body>
+</html>
